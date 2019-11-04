@@ -6,23 +6,31 @@ apply from: "https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/${grad
 apply from: "https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/${gradlePluginVersion}/artifact-pom-manager.gradle"
 
 project.afterEvaluate {
+
+    def publishSrcAndJavaDoc = getBooleanProperty("mavPublishSrcAndJavaDoc")
+
     publishing {
         publications {
             mavenPublish(MavenPublication) {
                 if (isAndroidProject()) {
                     artifact bundleReleaseAar
-                    artifact androidJavadocsJar
-                    artifact androidSourcesJar
+                    if (publishSrcAndJavaDoc){
+                        artifact androidJavadocsJar
+                        artifact androidSourcesJar
+                    }
+
                 } else {
                     artifact jar
-                    artifact sourcesJar
-                    artifact javadocJar
+                    if (publishSrcAndJavaDoc){
+                        artifact sourcesJar
+                        artifact javadocJar
+                    }
                 }
-                
+
                 decoratePom(pom)
             }
         }
-        
+
         repositories {
             def isToRemoteRepo = getBooleanProperty("mavPublishToRemoteRepo")
             def isToInternalRepo = getBooleanProperty("mavPublishToInternalRepo")
