@@ -41,6 +41,8 @@ _<b>Attention:</b> If you add the same property to the root project file and to 
 * <b>mavLibraryLicenses</b> _-> Map property -> A map with the name and the urls of the library licenses_
 * <b>mavSiteUrl</b> _-> String property -> Identify the url of the project website_
 * <b>mavGitUrl</b> _-> String property ->Identify the url of the project github page_
+* <b>mavOrganizationName</b> _-> String property -> Identify the name of the organization of the project_
+* <b>mavOrganizationUrl</b> _-> String property ->Identify the url of the organization of the project_
 
 ### <a name="repositories"/>2. Repositories
 

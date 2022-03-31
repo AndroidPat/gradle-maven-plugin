@@ -27,6 +27,10 @@ def decoratePom(pom) {
         developerConnection = getStringProperty("mavGitUrl")
         url = getStringProperty("mavSiteUrl")
     }
+    pom.organization {
+        name = getStringProperty("mavOrganizationName")
+        url = getStringProperty("mavOrganizationUrl")
+    }
 
     addDependencies(pom)
 }
