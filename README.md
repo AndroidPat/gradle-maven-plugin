@@ -16,15 +16,15 @@ You can use this plugin for Java Library and Android Library.
 ## <a name="usage"/>Usage
 In order to use GradleMavenizer you have to add the line
 
-`apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'`
+`apply from: 'https://raw.githubusercontent.com/Fed93/gradle-maven-plugin/master/gradle-mavenizer.gradle'`
 
 at the <b>very bottom</b> of the *build.gradle* file. Alternatively, to use a specific release version, add this property to the project (see Releases at the top of the Github page for released versions):
 
-    mavPluginVersion = '1.2.0'
+    mavPluginVersion = '1.4.0'
     
 and add this line to the very bottom of the *build.gradle* file:
 
-    apply from: "https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/${project.mavPluginVersion}/gradle-mavenizer.gradle"`
+    apply from: "https://raw.githubusercontent.com/Fed93/gradle-maven-plugin/${project.mavPluginVersion}/gradle-mavenizer.gradle"`
 
 ## <a name="customization"/>Customization
 GradleMavenizer is highly customizable.
@@ -42,7 +42,7 @@ _<b>Attention:</b> If you add the same property to the root project file and to 
 * <b>mavSiteUrl</b> _-> String property -> Identify the url of the project website_
 * <b>mavGitUrl</b> _-> String property ->Identify the url of the project github page_
 * <b>mavOrganizationName</b> _-> String property -> Identify the name of the organization of the project_
-* <b>mavOrganizationUrl</b> _-> String property ->Identify the url of the organization of the project_
+* <b>mavOrganizationUrl</b> _-> String property -> Identify the url of the organization of the project_
 
 ### <a name="repositories"/>2. Repositories
 
@@ -66,7 +66,7 @@ _<b>Attention:</b> If you won't set any repository automatically the script will
 ```
 project.ext {
     mavDevelopers = ["Fe":"Federico"]
-    mavSiteUrl = "https://github.com/sky-uk/gradle-maven-plugin"
+    mavSiteUrl = "https://github.com/Fed93/gradle-maven-plugin"
     mavGitUrl = mavSiteUrl + '.git'
     mavProjectName = 'GradleMavenizer'
     mavPublishToInternalRepo = true
