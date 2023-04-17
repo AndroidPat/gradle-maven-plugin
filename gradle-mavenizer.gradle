@@ -21,17 +21,24 @@ if (secretPropsFile.exists()) {
 }
 
 project.afterEvaluate {
+
+	def publishSrcAndJavaDoc = getBooleanProperty("mavPublishSrcAndJavaDoc")
+
     publishing {
         publications {
             mavenPublish(MavenPublication) {
                 if (project.plugins.findPlugin("com.android.library")) {
                     artifact bundleReleaseAar
-                    artifact androidJavadocsJar
-                    artifact androidSourcesJar
+					if (publishSrcAndJavaDoc){
+						artifact androidJavadocsJar
+						artifact androidSourcesJar
+					}
                 } else {
                     artifact jar
-                    artifact sourcesJar
-                    artifact javadocJar
+					if (publishSrcAndJavaDoc){
+						artifact sourcesJar
+						artifact javadocJar
+					}
                 }
                 decoratePom(pom)
             }
